@@ -286,6 +286,7 @@ client.on("message", message => {
 ❖${prefix}stop ~ لإخرآج البوت من الروم
 ❖${prefix}np ~ لمعرفة الأغنية المشغلة حآليا
 ❖${prefix}queue ~ لمعرفة قآئمة التشغيل
+❖${prefix}leave ~ خروج البوت من الروم
 
  `)
    message.author.sendEmbed(embed)
@@ -449,6 +450,9 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
 			return msg.channel.send('استأنفت الموسيقى بالنسبة لك !');
 		}
 		return msg.channel.send('لا يوجد شيء حالي في العمل.');
+	} else if (command === `leave`) {
+		if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .');
+		serverQueue.voiceChannel.leave();
 	}
 
 	return undefined;
