@@ -379,7 +379,7 @@ client.on('message', async msg => {
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("FireBot")
+					.setFooter("Fire shop")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					try {
@@ -881,7 +881,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO FireBot`` ')
+            .setTitle('``INFO FireShop`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -891,7 +891,7 @@ client.on('message', message => {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ - ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | iiFireGamer')
+			      .setFooter('Fire Shop')
     })
 }
 });
@@ -1505,7 +1505,7 @@ msg.channel.send(embed).then(() => {
 
 client.on('ready', function(){	
     var ms = 40000 ;	
-    var setGame = ['-inv','-help'];	
+    var setGame = [''-help | Fire Shop'];	
     var i = -1;	
     var j = 0;	
     setInterval(function (){	
@@ -2110,7 +2110,7 @@ let args = message.content.split(" ").slice(1).join(" ");
 
 
 
-client.users.get("495680518365511721","319624924769681412").send(
+client.users.get("319624924769681412").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
@@ -2122,7 +2122,7 @@ let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
      .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
      .setThumbnail(message.author.avatarURL)
-     .setFooter("By : iiFireGamer")
+     .setFooter(" Fire Shop")
                                                 
 
 message.channel.send(embed);
@@ -2437,4 +2437,4 @@ client.on('guildMemberAdd', member=> {
     });
 
 
-client.login(process.env.BOT_KEY);
+client.login(process.env.BOT_TOKEN);
