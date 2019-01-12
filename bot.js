@@ -453,6 +453,7 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
 	} else if (command === `leave`) {
 		if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .');
 		serverQueue.voiceChannel.leave();
+		msg.channel.send('تم خروج البوت من الروم')
 	}
 
 	return undefined;
